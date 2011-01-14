@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  recommended_name: MyString
+  casrn: MyString
+  changed_by_id: 1
+  note: MyText
+
+two:
+  recommended_name: MyString
+  casrn: MyString
+  changed_by_id: 1
+  note: MyText

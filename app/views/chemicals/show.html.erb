@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Recommended name:</b>
+  <%= @chemical.recommended_name %>
+</p>
+
+<p>
+  <b>Casrn:</b>
+  <%= @chemical.casrn %>
+</p>
+
+<p>
+  <b>Changed by:</b>
+  <%= @chemical.changed_by_id %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @chemical.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_chemical_path(@chemical) %> |
+<%= link_to 'Back', chemicals_path %>

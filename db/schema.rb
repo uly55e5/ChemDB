@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110114102829) do
+ActiveRecord::Schema.define(:version => 20110114143519) do
+
+  create_table "chemicals", :force => true do |t|
+    t.string   "recommended_name"
+    t.string   "casrn"
+    t.integer  "changed_by_id"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login_name"

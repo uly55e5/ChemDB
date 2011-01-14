@@ -1,0 +1,29 @@
+<h1>Listing chemicals</h1>
+
+<table>
+  <tr>
+    <th>Recommended name</th>
+    <th>Casrn</th>
+    <th>Changed by</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @chemicals.each do |chemical| %>
+  <tr>
+    <td><%= chemical.recommended_name %></td>
+    <td><%= chemical.casrn %></td>
+    <td><%= chemical.changed_by_id %></td>
+    <td><%= chemical.note %></td>
+    <td><%= link_to 'Show', chemical %></td>
+    <td><%= link_to 'Edit', edit_chemical_path(chemical) %></td>
+    <td><%= link_to 'Destroy', chemical, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Chemical', new_chemical_path %>

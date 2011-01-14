@@ -1,5 +1,7 @@
 ChemDB::Application.routes.draw do
   
+  resources :chemicals
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

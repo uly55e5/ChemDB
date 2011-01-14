@@ -1,0 +1,29 @@
+<%= form_for(@chemical) do |f| %>
+  <% if @chemical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chemical.errors.count, "error") %> prohibited this chemical from being saved:</h2>
+
+      <ul>
+      <% @chemical.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :recommended_name %><br />
+    <%= f.text_field :recommended_name %>
+  </div>
+  <div class="field">
+    <%= f.label :casrn, 'CAS Registry Number' %><br />
+    <%= f.text_field :casrn %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note, :rows => 5 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
