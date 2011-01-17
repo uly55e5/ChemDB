@@ -1,5 +1,7 @@
 ChemDB::Application.routes.draw do
   
+  resources :chemical_names
+
   resources :chemicals
 
   controller :sessions do

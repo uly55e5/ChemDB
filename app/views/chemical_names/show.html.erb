@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @chemical_name.name %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @chemical_name.language %>
+</p>
+
+<p>
+  <b>Chemical:</b>
+  <%= @chemical_name.chemical_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_chemical_name_path(@chemical_name) %> |
+<%= link_to 'Back', chemical_names_path %>
