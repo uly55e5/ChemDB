@@ -1,7 +1,7 @@
 class CreateChemicals < ActiveRecord::Migration
   def self.up
     create_table :chemicals do |t|
-      t.string :recommended_name
+      t.integer :recommended_name_id
       t.string :casrn
       t.integer :changed_by_id
       t.text :note

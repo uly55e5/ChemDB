@@ -25,6 +25,8 @@ class ChemicalsController < ApplicationController
   # GET /chemicals/new.xml
   def new
     @chemical = Chemical.new
+    @chemical.chemical_names.build
+    @chemical.recommended_name = ChemicalName.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -56,6 +58,7 @@ class ChemicalsController < ApplicationController
   # PUT /chemicals/1
   # PUT /chemicals/1.xml
   def update
+    params[:chemical][:existing_name_attributes] ||= {}
     @chemical = Chemical.find(params[:id])
 
     respond_to do |format|

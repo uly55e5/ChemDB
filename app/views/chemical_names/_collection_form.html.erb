@@ -1,0 +1,25 @@
+<% new_or_existing = chemical_name.new_record? ? 'new' : 'existing' %>
+<% prefix = "chemical[#{new_or_existing}_name_attributes][]" %>
+
+<%= fields_for prefix, chemical_name do |f| %>
+  <% if chemical_name.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chemical_name.errors.count, "error") %> prohibited this chemical_name from being saved:</h2>
+
+      <ul>
+      <% @chemical_name.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.text_field :language, :size => 2 %>
+    <%= radio_button_tag :recommended, chemical_name.id %>
+    <%= link_to_function "remove", "$(this).up('.name').remove()" %>
+  </div>
+
+<% end %>

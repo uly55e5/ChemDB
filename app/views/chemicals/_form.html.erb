@@ -11,10 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :recommended_name %><br />
-    <%= f.text_field :recommended_name %>
+  <div id="names">
+    <%= render :partial => 'chemical_names/collection_form', :as => :chemical_name, :collection => @chemical.chemical_names %>
   </div>
+  <p>
+    <%= add_name_link "Add a name" %>
+  </p>
+
   <div class="field">
     <%= f.label :casrn, 'CAS Registry Number' %><br />
     <%= f.text_field :casrn %>

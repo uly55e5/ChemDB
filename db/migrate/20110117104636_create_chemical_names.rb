@@ -1,8 +1,8 @@
 class CreateChemicalNames < ActiveRecord::Migration
   def self.up
     create_table :chemical_names do |t|
-      t.string :name
-      t.string :language
+      t.string :name, :null => false
+      t.string :language, :limit => 2, :null => false
       t.integer :chemical_id
 
       t.timestamps
