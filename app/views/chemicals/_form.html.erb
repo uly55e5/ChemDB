@@ -10,16 +10,17 @@
       </ul>
     </div>
   <% end %>
-
+  <% @myid = 0 %>
   <div id="names">
-    <%= render :partial => 'chemical_names/collection_form', :as => :chemical_name, :collection => @chemical.chemical_names %>
+    <%= render :partial => 'chemical_names/collection_form', :as => :chemical_name, :collection => @chemical.chemical_names,
+    :locals => {:myid =>  @myid+=1 } %>
   </div>
   <p>
-    <%= add_name_link "Add a name" %>
+    <%= add_name_link t(:add_a_name) %>
   </p>
 
   <div class="field">
-    <%= f.label :casrn, 'CAS Registry Number' %><br />
+    <%= f.label :casrn %><br />
     <%= f.text_field :casrn %>
   </div>
   <div class="field">

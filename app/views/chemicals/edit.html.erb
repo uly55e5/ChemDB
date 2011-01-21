@@ -1,6 +1,6 @@
-<h1>Editing chemical</h1>
+<h1><%=  t(:edit_chemical)%></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @chemical %> |
-<%= link_to 'Back', chemicals_path %>
+<%= link_to t(:show), @chemical %> |
+<%= link_to t(:back), chemicals_path %>

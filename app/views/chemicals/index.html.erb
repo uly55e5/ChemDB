@@ -1,11 +1,11 @@
-<h1>Listing chemicals</h1>
+<h1><%=t :listing_chemicals%></h1>
 
 <table>
   <tr>
-    <th>Recommended name</th>
-    <th>Casrn</th>
-    <th>Changed by</th>
-    <th>Note</th>
+    <th><%=t :recommended_name %></th>
+    <th><%=t :casrn %>Casrn</th>
+    <th><%=t :changed_by %></th>
+    <th><%=t  :notes %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,13 +17,13 @@
     <td><%= chemical.casrn %></td>
     <td><%= chemical.changed_by_id %></td>
     <td><%= chemical.note %></td>
-    <td><%= link_to 'Show', chemical %></td>
-    <td><%= link_to 'Edit', edit_chemical_path(chemical) %></td>
-    <td><%= link_to 'Destroy', chemical, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t(:show) , chemical %></td>
+    <td><%= link_to t(:edit), edit_chemical_path(chemical) %></td>
+    <td><%= link_to t(:destroy), chemical, :confirm => t(:are_you_sure) , :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Chemical', new_chemical_path %>
+<%= link_to t(:new_chemical), new_chemical_path %>

@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Recommended name:</b>
+  <b><%=t :recommended_name %>:</b>
   <%= @chemical.recommended_name.name %>
 </p>
 
 <p>
-  <b>Casrn:</b>
+  <b><%=t :casrn %>:</b>
   <%= @chemical.casrn %>
 </p>
 
 <p>
-  <b>Changed by:</b>
+  <b><%=t :changed_by %>:</b>
   <%= @chemical.changed_by_id %>
 </p>
 
 <p>
-  <b>Note:</b>
+  <b><%=t  :notes %>:</b>
   <%= @chemical.note %>
 </p>
 
 <p>
-  <b>Names:</b>
+  <b><%=t  :alternative_names %>:</b>
   <% @names.each do |name| %>
 <p>
     <%= name.name + " [#{name.language}] " %>
@@ -30,5 +30,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_chemical_path(@chemical) %> |
-<%= link_to 'Back', chemicals_path %>
+<%= link_to t(:edit), edit_chemical_path(@chemical) %> |
+<%= link_to t(:back), chemicals_path %>

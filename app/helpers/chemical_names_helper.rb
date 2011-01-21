@@ -1,2 +1,2 @@
-module ChemicalNamesHelper    
+module ChemicalNamesHelper
 end

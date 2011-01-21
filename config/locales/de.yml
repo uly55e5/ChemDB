@@ -1,0 +1,30 @@
+## YAML Template.
+de:
+  recommended_name: "Empfohlener Name"
+  casrn: "CAS-Registry-Nummer"
+  changed_by: "Geändert von"
+  notes: "Bemerkungen"
+  alternative_names: "Alternative Namen"
+  show: "zeigen"
+  edit: "bearbeiten"
+  destroy: "löschen"
+  new_chemical: "Neue Chemikalie"
+  listing_chemicals: "Chemikalien-Liste"
+  are_you_sure: "Sind Sie sicher?"
+  back: "zurück"
+  name: "Name"
+  remove: "entfernen"
+  add_a_name: "einen Namen hinzufügen"
+  edit_chemical: "Chemikalie bearbeiten"
+  activerecord:
+    models:
+      chemical: "Chemikalie"
+    attributes:
+      chemical:
+        casrn: "CAS-Registry-Nummer"
+        note: "Bemerkungen"
+  helpers:
+    submit:
+      create: '%{model} erstellen'
+      update: '%{model} aktualisieren'
+      submit: '%{model} speichern'
