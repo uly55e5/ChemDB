@@ -18,7 +18,7 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.text_field :language, :size => 2 %>
-    <%= radio_button_tag :recommended, chemical_name.id %>
+    <%= radio_button_tag :recommended_names_id, chemical_name.id %>
     <%= link_to_function "remove", "$(this).up('.name').remove()" %>
   </div>
 

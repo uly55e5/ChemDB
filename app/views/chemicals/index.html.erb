@@ -13,7 +13,7 @@
 
 <% @chemicals.each do |chemical| %>
   <tr>
-    <td><%= chemical.recommended_name %></td>
+    <td><%= chemical.recommended_name.name %></td>
     <td><%= chemical.casrn %></td>
     <td><%= chemical.changed_by_id %></td>
     <td><%= chemical.note %></td>

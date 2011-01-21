@@ -21,14 +21,6 @@ class Chemical < ActiveRecord::Base
     end
   end
 
-  def recommended
-    dafdsaf
-  end
-
-  def recommended=(rec)
-    eadggs
-  end
-
   def save_names
     chemical_names.each do |name|
       name.save(:validate => false)

@@ -14,6 +14,7 @@ class ChemicalsController < ApplicationController
   # GET /chemicals/1.xml
   def show
     @chemical = Chemical.find(params[:id])
+    @names = ChemicalName.where({ :chemical_id => @chemical}).all
 
     respond_to do |format|
       format.html # show.html.erb
