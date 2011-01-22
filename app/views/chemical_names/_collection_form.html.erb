@@ -19,8 +19,9 @@
     <%= f.label t(:name) %>
     <%= f.text_field :name %>
     <%= f.text_field :language, :size => 2 %>
-    <%= radio_button_tag :recommended_name, :recommended  %>
-    <%= chemical_name %>
+    <%= radio_button_tag "chemical[new_name_attributes][][recommended]",
+      chemical_name.id ? chemical_name.id : true,
+      @chemical.recommended_name.id == chemical_name.id %>
     <%= link_to_function t(:remove), "$(this).up('.name').remove()" %>
   </div>
 

@@ -12,8 +12,7 @@
   <% end %>
   <% @myid = 0 %>
   <div id="names">
-    <%= render :partial => 'chemical_names/collection_form', :as => :chemical_name, :collection => @chemical.chemical_names,
-    :locals => {:myid =>  @myid+=1 } %>
+    <%= render :partial => 'chemical_names/collection_form', :as => :chemical_name, :collection => @chemical.chemical_names %>
   </div>
   <p>
     <%= add_name_link t(:add_a_name) %>
