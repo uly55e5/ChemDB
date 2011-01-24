@@ -6,7 +6,8 @@ class Chemical < ActiveRecord::Base
   def new_name_attributes=(name_attributes)
     name_attributes.each do |attributes|
       name = chemical_names.build(attributes)
-      recommended_name = name if attributes[name] == :recommended
+      name.save
+      self.recommended_name_id = name.id if attributes[:recommended]
     end
   end
 
@@ -22,6 +23,7 @@ class Chemical < ActiveRecord::Base
   end
 
   def save_names
+    dasfer
     chemical_names.each do |name|
       name.save(:validate => false)
     end
