@@ -1,29 +1,20 @@
 class ChemicalName < ActiveRecord::Base
   belongs_to :chemical
   has_one :chemical
-  validates_presence_of :language
-  validates_presence_of :name
-  validates_uniqueness_of :name
+
+  validates :name, :presence => true, :uniqueness => true
+  validates_size_of :name, :minimum => 2, :message => (I18n.t :name_to_short_error)
+  validates :language, :presence => true
+  validates_size_of :language, :is => 2
+  validates_numericality_of :recommended, :only_integer => true, :allow_nil => true
+
   attr_accessor :recommended
   after_initialize :set_default_values
 
-  def new
-    parent.new
-    @@myid = @@myid ? @@myid += 1 : 1
-  end
-
-  def self.myid
-    @@myid ? @@myid : 0
-  end
 
   def set_default_values
     return unless new_record?
     self.language = "de"
-    create_recommended
-  end
-    
-  def create_recommended
-    self.recommended = SecureRandom.base64
   end
   
 end

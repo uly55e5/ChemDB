@@ -46,13 +46,6 @@ class ChemicalsController < ApplicationController
     @chemical = Chemical.new(params[:chemical])
     respond_to do |format|
       if @chemical.save
-        @chemical.chemical_names.each do |name|
-          params[:chemical][:new_name_attributes].each do |attribute|
-            if attribute[:recommended] == 0
-              @chemical.recommended_name_id == ChemicalNames.where(name == attribute[:name])
-            end
-          end
-        end
         format.html { redirect_to(@chemical, :notice => 'Chemical was successfully created.') }
         format.xml  { render :xml => @chemical, :status => :created, :location => @chemical }
       else

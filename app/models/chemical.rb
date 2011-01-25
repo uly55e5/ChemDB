@@ -1,13 +1,25 @@
 class Chemical < ActiveRecord::Base
+
   has_many :chemical_names, :dependent => :destroy
   belongs_to :recommended_name, :class_name => "ChemicalName"
+  
+  validates_format_of :casrn, :with => /[0-9]+-[0-9]+-[0-9]+/ , :allow_blank => true
+  validates :recommended_name_id, :presence => true, :uniqueness => true
+
   after_update :save_names
 
   def new_name_attributes=(name_attributes)
     name_attributes.each do |attributes|
-      name = chemical_names.build(attributes)
-      name.save
-      self.recommended_name_id = name.id if attributes[:recommended]
+      
+      if ! attributes[:name].blank?
+        name = chemical_names.build(attributes)
+        name.save!
+        self.recommended_name_id = attributes[:recommended] == 0 ? name.id : attributes[:recommended] if (attributes[:recommended] != nil)
+      else 
+        if (! attributes[:recommended].nil? && Integer(attributes[:recommended]) > 0 )
+          self.recommended_name_id = attributes[:recommended]
+        end
+      end
     end
   end
 
@@ -23,7 +35,6 @@ class Chemical < ActiveRecord::Base
   end
 
   def save_names
-    dasfer
     chemical_names.each do |name|
       name.save(:validate => false)
     end

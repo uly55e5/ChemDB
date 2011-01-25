@@ -4,10 +4,10 @@
 <%= fields_for prefix, chemical_name do |f| %>
   <% if chemical_name.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@chemical_name.errors.count, "error") %> prohibited this chemical_name from being saved:</h2>
+      <h2><%= pluralize(chemical_name.errors.count, "error") %> prohibited this chemical_name from being saved:</h2>
 
       <ul>
-      <% @chemical_name.errors.full_messages.each do |msg| %>
+      <% chemical_name.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -20,7 +20,7 @@
     <%= f.text_field :name %>
     <%= f.text_field :language, :size => 2 %>
     <%= radio_button_tag "chemical[new_name_attributes][][recommended]",
-      chemical_name.id ? chemical_name.id : true,
+      chemical_name.id ? chemical_name.id : 0,
       @chemical.recommended_name.id == chemical_name.id %>
     <%= link_to_function t(:remove), "$(this).up('.name').remove()" %>
   </div>
