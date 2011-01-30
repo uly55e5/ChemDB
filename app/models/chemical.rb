@@ -2,6 +2,7 @@ class Chemical < ActiveRecord::Base
 
   has_many :chemical_names, :dependent => :destroy
   belongs_to :recommended_name, :class_name => "ChemicalName"
+  has_many :units
   
   validates_format_of :casrn, :with => /[0-9]+-[0-9]+-[0-9]+/ , :allow_blank => true
   validates :recommended_name_id, :presence => true, :uniqueness => true

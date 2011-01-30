@@ -1,5 +1,9 @@
 ChemDB::Application.routes.draw do
   
+  resources :locations
+
+  resources :units
+
   resources :chemical_names
 
   resources :chemicals

@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  chemical_id: 1
+  size: MyString
+  source: MyString
+  purchase_date: MyString
+  next_check_date: 2011-01-25
+  expiration_date: 2011-01-25
+  created_by: 1
+  location_id: 1
+  destroyed_date: 2011-01-25
+  destroyed_reason: MyText
+  note: MyText
+  sign: MyString
+
+two:
+  chemical_id: 1
+  size: MyString
+  source: MyString
+  purchase_date: MyString
+  next_check_date: 2011-01-25
+  expiration_date: 2011-01-25
+  created_by: 1
+  location_id: 1
+  destroyed_date: 2011-01-25
+  destroyed_reason: MyText
+  note: MyText
+  sign: MyString

@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Chemical:</b>
+  <%= @unit.chemical_id %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @unit.size %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @unit.source %>
+</p>
+
+<p>
+  <b>Purchase date:</b>
+  <%= @unit.purchase_date %>
+</p>
+
+<p>
+  <b>Next check date:</b>
+  <%= @unit.next_check_date %>
+</p>
+
+<p>
+  <b>Expiration date:</b>
+  <%= @unit.expiration_date %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @unit.created_by %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @unit.location_id %>
+</p>
+
+<p>
+  <b>Destroyed date:</b>
+  <%= @unit.destroyed_date %>
+</p>
+
+<p>
+  <b>Destroyed reason:</b>
+  <%= @unit.destroyed_reason %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @unit.note %>
+</p>
+
+<p>
+  <b>Sign:</b>
+  <%= @unit.sign %>
+</p>
+
+
+<%= link_to 'Edit', edit_unit_path(@unit) %> |
+<%= link_to 'Back', units_path %>

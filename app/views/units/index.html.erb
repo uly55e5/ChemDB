@@ -1,0 +1,45 @@
+<h1>Listing units</h1>
+
+<table>
+  <tr>
+    <th>Chemical</th>
+    <th>Size</th>
+    <th>Source</th>
+    <th>Purchase date</th>
+    <th>Next check date</th>
+    <th>Expiration date</th>
+    <th>Created by</th>
+    <th>Location</th>
+    <th>Destroyed date</th>
+    <th>Destroyed reason</th>
+    <th>Note</th>
+    <th>Sign</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @units.each do |unit| %>
+  <tr>
+    <td><%= unit.chemical_id %></td>
+    <td><%= unit.size %></td>
+    <td><%= unit.source %></td>
+    <td><%= unit.purchase_date %></td>
+    <td><%= unit.next_check_date %></td>
+    <td><%= unit.expiration_date %></td>
+    <td><%= unit.created_by %></td>
+    <td><%= unit.location_id %></td>
+    <td><%= unit.destroyed_date %></td>
+    <td><%= unit.destroyed_reason %></td>
+    <td><%= unit.note %></td>
+    <td><%= unit.sign %></td>
+    <td><%= link_to 'Show', unit %></td>
+    <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
+    <td><%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Unit', new_unit_path %>
